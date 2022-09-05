@@ -1,2 +1,6 @@
 gunicorn
 flask
+werkzeug==2.0.3
+torchvision==0.10.0
+pytest
+typer
