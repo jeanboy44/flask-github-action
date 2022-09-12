@@ -33,3 +33,12 @@ def test_predict():
     for item, expected_item in zip(resp_json.items(), expected.items()):
         assert item[0] == expected_item[0]
         assert item[1] == expected_item[1]
+    
+    print("\n\nPredict Results")
+    print("---------------------------------------------------------")
+    print("Input:")
+    print(payload)
+    print("Output:")
+    print(resp_json)
+    print("-----------------------------------------------------------")
+    
