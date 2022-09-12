@@ -24,6 +24,7 @@ jobs:
       - name: Run tests
         run: pytest tests/
   build:
+    needs: test
     name: Deploy Flask App
     runs-on: self-hosted
     steps:
