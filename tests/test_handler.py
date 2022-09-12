@@ -1,7 +1,7 @@
 import pytest
 from PIL import Image
-from src.model.model_handler import Classifier
-from src.app import _read_image
+from model.model_handler import Classifier
+from app import _read_image
 
 
 @pytest.fixture
