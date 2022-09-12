@@ -38,13 +38,6 @@ model = initialize()
 route_blueprint = Blueprint("route_blueprint", __name__)
 
 
-@route_blueprint.route("/print", methods=["POST"])
-def print():
-    if request.method == "POST":
-        txt = request.args.get("txt")
-        return txt
-
-
 @route_blueprint.route("/predict", methods=["POST"])
 def predict():
     if request.method == "POST":
@@ -54,9 +47,14 @@ def predict():
 
 
 @route_blueprint.route("/")
-def hello_world():
+def main_page():
     super_secret = os.getenv("SECRET_VALUE")
     return f"{super_secret}</p>"
+
+
+@route_blueprint.route("/test")
+def test_page():
+    return "test"
 
 
 def create_app():
