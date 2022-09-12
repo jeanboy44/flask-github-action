@@ -1,3 +1,4 @@
+import os
 from PIL import Image
 import requests
 from io import BytesIO
@@ -51,6 +52,11 @@ def predict():
         class_id, class_name = run(content["url"])
         return jsonify({"class_id": class_id, "class_name": class_name})
 
+
+@route_blueprint.route("/")
+def hello_world():
+    super_secret = os.getenv('SECRET_VALUE')
+    return f"{super_secret}</p>"
 
 def create_app():
     app = Flask(__name__)
