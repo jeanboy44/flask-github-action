@@ -10,7 +10,7 @@ jobs:
     name: Unit Test
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@develop
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: '3.9'
