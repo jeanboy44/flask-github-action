@@ -59,7 +59,7 @@ jobs:
       - name: set pythonpath
         run: |
           echo PYTHONPATH=$GITHUB_WORKSPACE/src >> $GITHUB_ENV
-          echo FLASK_SERVER_URL=${{ secrets.SECRET_VALUE }} >> $GITHUB_ENV
+          echo FLASK_SERVER_URL='${{ secrets.FLASK_SERVER_URL }}' >> $GITHUB_ENV
           cat $GITHUB_ENV
       - name: Run tests
         run: pytest tests/test_deployed_flask_app.py
