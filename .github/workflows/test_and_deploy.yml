@@ -31,7 +31,7 @@ jobs:
     - name: Check out the repo
       uses: actions/checkout@v2
     - name: set pythonpath
-        run: |
+      run: |
           echo PYTHONPATH=$GITHUB_WORKSPACE/src >> $GITHUB_ENV
           cat $GITHUB_ENV
     - name: Build and Run Docker
