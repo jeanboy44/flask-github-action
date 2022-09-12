@@ -1,0 +1,24 @@
+name: test
+
+on:
+  push:
+    branch:
+      - develop
+
+jobs:
+  test:
+    name: Unit Test
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@develop
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          architecture: 'x64'
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: echo workspace
+        run: echo $GITHUB_WORKSPACE
+        shell: bash
+      - name: Run tests
+        run: pytest tests/
