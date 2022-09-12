@@ -7,7 +7,7 @@ from io import BytesIO
 import requests
 from PIL import Image
 from flask import Blueprint, jsonify, request
-from src.model.model_handler import Classifier
+from model.model_handler import Classifier
 
 from flask import Flask
 
@@ -55,8 +55,9 @@ def predict():
 
 @route_blueprint.route("/")
 def hello_world():
-    super_secret = os.getenv('SECRET_VALUE')
+    super_secret = os.getenv("SECRET_VALUE")
     return f"{super_secret}</p>"
+
 
 def create_app():
     app = Flask(__name__)
