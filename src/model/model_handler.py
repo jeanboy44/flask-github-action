@@ -11,7 +11,7 @@ class Classifier:
         self.model = None
         self.class_index = None
 
-    def initialize(self, class_index_path: str = "src/model/index_to_name.json"):
+    def initialize(self, class_index_path: str = "models/index_to_name.json"):
         self.class_index = json.load(open(class_index_path))
         self.model = models.densenet121(pretrained=True)
         self.model.eval()
